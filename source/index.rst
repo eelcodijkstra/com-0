@@ -21,7 +21,7 @@ Com-0: inleiding communicatie
    :caption: Andere modules
 
    IoT-0 <https://eelcodijkstra.github.io/iot-0/>
-   IoT-1 <https://eelcodijkstra.github.io/iot-0/>
+   IoT-1 <https://eelcodijkstra.github.io/iot-1/>
 
 Index en zoekpagina
 ===================
