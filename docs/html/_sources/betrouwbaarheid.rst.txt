@@ -4,7 +4,7 @@ Betrouwbare communicatie
 
 .. topic:: Concepten en leerdoelen
 
-  * betrouwbaarheid
+  * betrouwbare communicatie
   * foutkans
   * kanaal
   * redundantie
