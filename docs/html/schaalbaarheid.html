@@ -1,0 +1,191 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nl">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Schaling en schaalbaarheid &#8212; Com-0  documentatie</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Zoeken" href="search.html" />
+    <link rel="next" title="Opdrachten" href="schaalbaarheid/opdrachten.html" />
+    <link rel="prev" title="Toetsvragen" href="betrouwbaarheid/toetsvragen.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Com-0</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigatie</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="inleiding.html">Inleiding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eerste-model.html">Een eerste model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lagen.html">Communicatie in lagen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="snelheid.html">Snelheid van communicatie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="betrouwbaarheid.html">Betrouwbare communicatie</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Schaling en schaalbaarheid</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="schaalbaarheid/opdrachten.html">Opdrachten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="schaalbaarheid/toetsvragen.html">Toetsvragen</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="todo.html">ToDo’s</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="betrouwbaarheid/toetsvragen.html" title="vorig hoofdstuk">Toetsvragen</a></li>
+      <li>Next: <a href="schaalbaarheid/opdrachten.html" title="volgend hoofdstuk">Opdrachten</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Snel zoeken</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Zoek" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="schaling-en-schaalbaarheid">
+<h1>Schaling en schaalbaarheid<a class="headerlink" href="#schaling-en-schaalbaarheid" title="Permalink naar deze titel">¶</a></h1>
+<p>Alice en Bob willen niet alleen met elkaar, maar ook met anderen communiceren.
+Als ze voor elke communicatie een aparte directe verbinding (“kanaal”) gebruiken, loopt dit al snel uit de hand.
+Het aantal directe verbindingen neemt kwadratisch toe met het aantal deelnemers in de communicatie.</p>
+<p>Bekijk de figuur en de tabel hieronder:</p>
+<a class="reference internal image-reference" href="_images/Communicatie-schaling-2.png"><img alt="_images/Communicatie-schaling-2.png" class="align-center" src="_images/Communicatie-schaling-2.png" style="width: 500px;" /></a>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="72%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">punten</th>
+<th class="head">verbindingen</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>2</td>
+<td>1</td>
+</tr>
+<tr class="row-odd"><td>3</td>
+<td>3</td>
+</tr>
+<tr class="row-even"><td>4</td>
+<td>6</td>
+</tr>
+<tr class="row-odd"><td>5</td>
+<td>10</td>
+</tr>
+<tr class="row-even"><td>6</td>
+<td>15</td>
+</tr>
+<tr class="row-odd"><td>100</td>
+<td>4950</td>
+</tr>
+<tr class="row-even"><td>N</td>
+<td><span class="math notranslate nohighlight">\(N * (N-1) / 2\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Zoals je in de tabel en in de figuur ziet, neemt het aantal verbindingen veel sneller toe dan het aantal punten.
+Elk nieuw punt moet met alle bestaande punten verbonden worden.</p>
+<ul>
+<li><p class="first">Hoeveel verbindingen zijn er nodig voor 7 punten?
+6 nieuwe verbindingen voor het 7e punt,
+plus het bestaande aantal verbindingen voor 6 punten: 6 + 15 = 21.</p>
+</li>
+<li><p class="first">Merk op dat in de tabel het aantal verbindingen gelijk is aan de som van het vorige aantal en het vorige aantal verbindingen:
+verbindingen(N+1) = N + verbindingen(N).</p>
+</li>
+<li><p class="first">Hoeveel verbindingen zijn er nodig voor (N+1) punten?
+Het aantal verbindingen voor N punten, plus N nieuwe verbindingen:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>   <span class="n">N</span> <span class="o">+</span> <span class="n">N</span> <span class="o">*</span> <span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>         <span class="o">-</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">N</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">N</span><span class="o">/</span><span class="mi">2</span> <span class="n">buiten</span> <span class="n">haakjes</span>
+<span class="o">=</span> <span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span> <span class="o">*</span> <span class="n">N</span> <span class="o">/</span> <span class="mi">2</span>      <span class="o">-</span> <span class="n">vereenvoudigen</span>
+<span class="o">=</span> <span class="p">(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">N</span> <span class="o">/</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Je kunt dit gedrag ook zien in de grafiek:</p>
+<p>Dit kwadratische gedrag van communicatie vinden we op verschillende manieren terug:</p>
+<ul class="simple">
+<li>communicatie in een groep wordt snel lastig als de groep groot wordt.
+Als de groep groter wordt dan ongeveer 7 personen, kost directe communicatie al snel teveel tijd van de leden in de groep:
+er wordt meer tijd aan communicatie besteed dan aan “werk”.
+Dit is één van de belangrijke redenen van een hiërarchische organisatie:
+op elk niveau van de organisatie is de grootte van de groep beperkt, meestal tot 5-10 personen.
+Voor software-projecten is de communicatie tussen de medewerkers in het project één van de meest bepalende factoren.
+(Zie: Brooks, The Mythical Man-month).</li>
+<li>voor communicatie met een meerdere personen zijn directe verbindingen niet geschikt.
+Omdat niet elk persoon op elk moment met iedereen hoeft te communiceren,
+kunnen directe verbindingen voor meerdere communicaties gebruikt worden: <em>multiplexen</em> van de verbindingen.
+Dit is één van de basisprincipes van netwerken.</li>
+<li>de <em>waarde van een netwerk</em> (of van een netwerktoepassing) is evenredig met het kwadraat van het aantal deelnemers in het netwerk (of in de toepassing): wet van Metcalfe.</li>
+</ul>
+<p>(Nog andere problemen m.b.t. de schaalbaarheid van communicatie, bijv. ten opzichte van rekenwerk en opslag van data.)</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="schaalbaarheid/opdrachten.html">Opdrachten</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schaalbaarheid/toetsvragen.html">Toetsvragen</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2018, SLO.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/schaalbaarheid.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,168 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nl">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Snelheid van communicatie &#8212; Com-0  documentatie</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Zoeken" href="search.html" />
+    <link rel="next" title="Opdrachten" href="snelheid/opdrachten.html" />
+    <link rel="prev" title="Toetsvragen" href="lagen/toetsvragen.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Com-0</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigatie</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="inleiding.html">Inleiding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eerste-model.html">Een eerste model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lagen.html">Communicatie in lagen</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Snelheid van communicatie</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="snelheid/opdrachten.html">Opdrachten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="snelheid/toetsvragen.html">Toetsvragen</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="betrouwbaarheid.html">Betrouwbare communicatie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schaalbaarheid.html">Schaling en schaalbaarheid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="todo.html">ToDo’s</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="lagen/toetsvragen.html" title="vorig hoofdstuk">Toetsvragen</a></li>
+      <li>Next: <a href="snelheid/opdrachten.html" title="volgend hoofdstuk">Opdrachten</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Snel zoeken</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Zoek" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="snelheid-van-communicatie">
+<h1>Snelheid van communicatie<a class="headerlink" href="#snelheid-van-communicatie" title="Permalink naar deze titel">¶</a></h1>
+<div class="topic">
+<p class="topic-title first">Concepten en leerdoelen</p>
+<p>snelheid:</p>
+<ul class="simple">
+<li>bitsnelheid (throughput, bandbreedte) en</li>
+<li>vertraging (latency)</li>
+</ul>
+</div>
+<p>Beschouw in het morsecode-voorbeeld van het vorige hoofdstuk het bericht in de vorm van een reeks lettertekens.
+Hoe snel komt dit bericht bij Bob aan?
+Waar hangt dit van af?</p>
+<ul class="simple">
+<li>de lengte van het bericht (aantal tekens);</li>
+<li>de tekensnelheid van de telegrafist: het aantal tekens per seconde dat deze kan versturen;</li>
+<li>de transportsnelheid van de tekens en de lengte van de verbinding van Alice naar Bob.</li>
+</ul>
+<a class="reference internal image-reference" href="_images/communicatie-snelheid-1.png"><img alt="_images/communicatie-snelheid-1.png" class="align-center" src="_images/communicatie-snelheid-1.png" style="width: 500px;" /></a>
+<p>Je kunt een bericht in een verbinding vergelijken met een serie auto’s op een weg: de snelheid waarmee de auto’s achter elkaar vertrekken, het aantal auto’s,  de snelheid waarmee de auto’s rijden, en de lengte van de weg bepalen de tijd tussen vertrek en aankomst.</p>
+<div class="topic">
+<p class="topic-title first">Opmerking</p>
+<p>De maximale transportsnelheid van de tekens wordt beperkt door de lichtsnelheid.
+De lichtsnelheid lijkt verwaarloosbaar in ons dagelijks leven - maar voor computers is dat niet helemaal het geval:
+de lichtsnelheid is ca. 30 cm/nsec (0,3.10^9 m/s) -
+een “foot per nanosecond”, zoals uitgelegd door Grace Hopper (<a class="reference external" href="https://www.youtube.com/watch?v=JEpsKnWZrJ8">https://www.youtube.com/watch?v=JEpsKnWZrJ8</a>).
+Een elektrisch signaal in een draad kan zich voortplanten met ca. 0,9 maal de lichtsnelheid.
+Een processor met een kloksnelheid van 3 GHz. kan in 1 nsec. ongeveer 3 instructies uitvoeren:
+de lichtsnelheid is “10 cm per instructie”. Met andere woorden:
+in de tijd dat een signaal 1 km aflegt, kan deze processor tenminste 10.000 instructies uitvoeren.</p>
+</div>
+<p>De tijd die nodig is voor het transporteren van een bericht hangt af van (i) de omvang van het bericht, en van (ii) de snelheid van de verbinding.
+Twee begrippen geven samen de snelheid van een verbinding aan:</p>
+<ul class="simple">
+<li>de bandbreedte:  het aantal tekens (meestal: bits) dat de verbinding per seconde kan transporteren; (in bits per seconde; ook wel: bitsnelheid) en</li>
+<li>de latency: de tijd  dat een teken onderweg (“verborgen”) is (in seconden).</li>
+</ul>
+<p>In het bovenstaande model is de bandbreedte de tekensnelheid. De latency  is de lengte van de verbinding gedeeld door de transportsnelheid.</p>
+<p>De bandbreedte wordt soms ook uitgedrukt in Hz, als er sprake is van een analoge verbinding. Bijvoorbeeld: de bandbreedte van een analoge telefoonverbinding is ongeveer 3000Hz (300-3400Hz).</p>
+<p>Bij digitale communicatie zijn er nog meer factoren die de latency beïnvloeden: bijvoorbeeld de rekentijd die nodig is om een bericht de juiste kant op te sturen (routering), en de rekentijd die nodig is voor het coderen en decoderen van een bericht.</p>
+<p>Ook bij andere informatieprocessen: rekenen en opslag/terugzoeken, hebben we te maken met de begrippen bandbreedte (of bitsnelheid) en latency.</p>
+<p>We kunnen de bandbreedte van een verbinding eenvoudig vergroten door meerdere parallelle verbindingen te gebruiken:</p>
+<a class="reference internal image-reference" href="_images/communicatie-snelheid-2.png"><img alt="_images/communicatie-snelheid-2.png" class="align-center" src="_images/communicatie-snelheid-2.png" style="width: 500px;" /></a>
+<p>Het verkleinen van de latency is in het algemeen veel lastiger;
+vaak betekent dit het verkleinen van de afstand en van het aantal tussenstappen (voor routering e.d.) in de communicatie.</p>
+<p>Als tijd (snelheid) een grote rol speelt, dan is de afstand waarover gecommuniceerd wordt van belang.
+Dit zie je bijvoorbeeld bij de aandelenhandel van Wall Street:
+de computers van handelaren, met allerlei slimme algoritmen, worden zo dicht mogelijk in de buurt geplaatst van de computers waarmee de beurstransacties plaatsvinden -
+om de “flitshandel” mogelijk te maken waarbij aandelen in fracties van een seconde gekocht en verkocht worden.
+(Zie bijvoorbeeld: Kevin Slavin, How algorithms shape our world;  <a class="reference external" href="https://www.youtube.com/watch?v=TDaFwnOiKVE">https://www.youtube.com/watch?v=TDaFwnOiKVE</a>).</p>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Te doen</p>
+<p class="last">Dit moet nog gedaan worden.</p>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="snelheid/opdrachten.html">Opdrachten</a></li>
+<li class="toctree-l1"><a class="reference internal" href="snelheid/toetsvragen.html">Toetsvragen</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2018, SLO.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/snelheid.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,155 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nl">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Communicatie in lagen &#8212; Com-0  documentatie</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Zoeken" href="search.html" />
+    <link rel="next" title="Opdrachten" href="lagen/opdrachten.html" />
+    <link rel="prev" title="Toetsvragen" href="eerste-model/toetsvragen.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Com-0</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigatie</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="inleiding.html">Inleiding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eerste-model.html">Een eerste model</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Communicatie in lagen</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="lagen/opdrachten.html">Opdrachten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lagen/toetsvragen.html">Toetsvragen</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="snelheid.html">Snelheid van communicatie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="betrouwbaarheid.html">Betrouwbare communicatie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schaalbaarheid.html">Schaling en schaalbaarheid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="todo.html">ToDo’s</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="eerste-model/toetsvragen.html" title="vorig hoofdstuk">Toetsvragen</a></li>
+      <li>Next: <a href="lagen/opdrachten.html" title="volgend hoofdstuk">Opdrachten</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Snel zoeken</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Zoek" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="communicatie-in-lagen">
+<h1>Communicatie in lagen<a class="headerlink" href="#communicatie-in-lagen" title="Permalink naar deze titel">¶</a></h1>
+<div class="topic">
+<p class="topic-title first">Concepten en leerdoelen</p>
+<ul class="simple">
+<li>lagen in het communicatiemodel</li>
+<li>lagen in ICT-systemen?</li>
+</ul>
+</div>
+<p>In de praktijk is er meestal geen sprake van een enkele vorm, maar van een reeks vormen.
+Als voorbeeld van transport van Alice naar Bob gebruiken we morse-communicatie:
+Alice schrijft het bericht op voor de telegrafist A die het bericht verstuurt naar de telegrafist B in de buurt van Bob;
+deze schrijft het bericht in leesbare tekst op voor Bob.</p>
+<a class="reference internal image-reference" href="_images/Alice-Bob-morse-1.png"><img alt="_images/Alice-Bob-morse-1.png" class="align-center" src="_images/Alice-Bob-morse-1.png" style="width: 500px;" /></a>
+<p>We hebben hier te maken met de volgende vormen en stappen:</p>
+<ol class="arabic simple">
+<li>Alice formuleert het bericht in een taal die Bob begrijpt, bijvoorbeeld Nederlands.</li>
+<li>Alice schrijft dit bericht op met behulp van lettertekens (uit een alfabet).</li>
+<li>Telegrafist A zet deze reeks lettertekens om in morse-symbolen (coderen).</li>
+<li>Deze morse-symbolen worden als elektrisch signaal getransporteerd naar de andere telegrafist.</li>
+<li>Telegrafist B zet de morse-symbolen om in lettertekens (decoderen)</li>
+<li>Bob leest de reeks lettertekens</li>
+<li>en begrijpt de Nederlandse zinnen.</li>
+</ol>
+<p>In het dagelijks leven voeren we de stappen van vormgeven (representeren) en interpreteren meestal automatisch uit:
+we zijn ons vaak niet bewust van de verschillende stappen die we maken - en van de keuzemogelijkheden die we daarbij hebben.</p>
+<p>We kunnen de verschillende stappen begrijpen als “lagen” in de communicatie.
+Een laag kun je dan zien als de “virtuele” communicatie van de betreffende vorm, met een eigen protocol.
+Deze laag staat los van de onderliggende communicatie:
+deze kan vaak op verschillende manieren plaatsvinden.
+Een laag staat ook los van het bovenliggende gebruik: die is voor deze laag niet van belang.
+De lagen worden gekoppeld door de representatie en interpretatie - bijvoorbeeld “schrijven” en “lezen” of “coderen” en “decoderen”. Voor het voorbeeld kunnen we de volgende lagen onderscheiden:</p>
+<a class="reference internal image-reference" href="_images/Alice-Bob-morse-2.png"><img alt="_images/Alice-Bob-morse-2.png" class="align-center" src="_images/Alice-Bob-morse-2.png" style="width: 500px;" /></a>
+<p>Opmerking: je kunt de keten van Alice naar Bob op verschillende manieren tekenen; ook als een lange horizontale keten.
+We tekenen een dergelijke communicatieketen vaak op de manier zoals hierboven, om de lagen in de keten aan te geven.
+We noemen een dergelijke stapeling van lagen, elk met hun eigen protocol,  ook wel een “protocol-stack”.</p>
+<div class="topic">
+<p class="topic-title first">Lagen in ICT-systemen</p>
+<p>P.M.</p>
+</div>
+<hr class="docutils" />
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="lagen/opdrachten.html">Opdrachten</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lagen/toetsvragen.html">Toetsvragen</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2018, SLO.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/lagen.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

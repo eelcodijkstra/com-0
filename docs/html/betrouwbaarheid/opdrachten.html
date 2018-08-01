@@ -1,0 +1,255 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nl">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Foutdetecterende codes &#8212; Com-0  documentatie</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Zoeken" href="../search.html" />
+    <link rel="next" title="Toetsvragen" href="toetsvragen.html" />
+    <link rel="prev" title="Betrouwbare communicatie" href="../betrouwbaarheid.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Com-0</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigatie</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../inleiding.html">Inleiding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../eerste-model.html">Een eerste model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lagen.html">Communicatie in lagen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../snelheid.html">Snelheid van communicatie</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../betrouwbaarheid.html">Betrouwbare communicatie</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../betrouwbaarheid.html#foutdetecterende-codes">Foutdetecterende codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../betrouwbaarheid.html#bericht-van-ontvangst">Bericht van ontvangst</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../betrouwbaarheid.html#foutherstellende-codes">Foutherstellende codes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../schaalbaarheid.html">Schaling en schaalbaarheid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../todo.html">ToDo’s</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../betrouwbaarheid.html">Betrouwbare communicatie</a><ul>
+      <li>Previous: <a href="../betrouwbaarheid.html" title="vorig hoofdstuk">Betrouwbare communicatie</a></li>
+      <li>Next: <a href="toetsvragen.html" title="volgend hoofdstuk">Toetsvragen</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Snel zoeken</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Zoek" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <p>(opdrachten bij betrouwbaarheid)</p>
+<div class="section" id="foutdetecterende-codes">
+<h1>Foutdetecterende codes<a class="headerlink" href="#foutdetecterende-codes" title="Permalink naar deze titel">¶</a></h1>
+<p><strong>Opdracht</strong>:
+ga na of je app voor internet-bankieren deze gegevens (bankrekeningnummer en betalingskenmerk) ook controleert,
+en op tijd een foutmelding geeft (voordat je een overschrijving naar een verkeerde rekening doet).</p>
+<p><strong>Opdracht*</strong>: hoe kun je het betalingskenmerk 1234-5678-9012-3456 veranderen in een geldig betalingskenmerk -
+door alleen het eerste cijfer te veranderen?</p>
+<p><strong>Opdracht</strong>: schrijf een programma voor het controleren van de geldigheid van een BSN (burger service nummer).
+Zie: <a class="reference external" href="https://nl.wikipedia.org/wiki/Elfproef">https://nl.wikipedia.org/wiki/Elfproef</a>.
+Een BSN bestaat uit 9 cijfers; deze cijfers worden achtereenvolgend vermenigvuldigd met 9, 8, 7, …, 3, 2, -1(!).
+De som van deze getallen moet dan deelbaar zijn door 11 (“elfproef”).</p>
+<p><strong>Opdracht</strong>: laad een groot bestand (bijvoorbeeld een Raspbian-distributie),
+en controleer de daarbij gegeven SHA-256 code om te controleren of je het bestand correct ontvangen hebt.</p>
+<p><strong>Vraag</strong>: de SHA-256 code ontvang je via een veilig kanaal: via het HTTPS-protocol;
+is het dan ook nodig om het bestand zelf via een veilig kanaal te versturen?</p>
+<p><strong>Vraag</strong>: je kunt deze hash-code gebruiken om te controleren of een bericht (bestand) zonder fouten overgestuurd is;
+welke andere communicatieproblemen kun je hiermee oplossen?</p>
+<p><strong>Vraag</strong>: wat is “best effort” communicatie?</p>
+<ol class="upperalpha simple">
+<li>de meest betrouwbare communicatie;</li>
+<li>communicatie zonder ontvangstgarantie;</li>
+</ol>
+</div>
+<div class="section" id="bericht-van-ontvangst">
+<h1>Bericht van ontvangst<a class="headerlink" href="#bericht-van-ontvangst" title="Permalink naar deze titel">¶</a></h1>
+<p><strong>Vraag</strong>.
+Welke van de communicatievormen die je gebruikt bieden de mogelijkheid tot bevestiging van ontvangst?
+Wanneer maak je daarvan gebruik?</p>
+<p><strong>Opdracht</strong>.
+Als Alice steeds moet wachten op een ontvangsbevestiging van Bob voordat ze een volgend bericht naar Bob kan sturen,
+levert dit veel vertraging op: voor elk bericht is dan tenminste tweemaal de latency van de verbinding Alice-Bob nodig.
+Een handiger aanpak is als Alice alvast het volgende bericht kan sturen, terwijl ze nog wacht op het vorige.
+In dat geval moet Alice aan een ontvangstbevestiging kunnen zien voor welk bericht dit bedoeld is.
+De berichten en de ACKs voorzien we daarom van een volgnummer.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="43%" />
+<col width="31%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Alice</th>
+<th class="head">&#160;</th>
+<th class="head">Bob</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>&#160;</td>
+<td>– bericht 0 –&gt;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>– bericht 1 –&gt;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>&lt;- ACK 0 —</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>– bericht 2 –&gt;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>&lt;- ACK 1 —</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>– bericht 3 –&gt;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>timeout</td>
+<td>… geen ACK2…</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<p>Maak de tabel af.</p>
+<p><strong>Opdracht</strong>.
+Als de verbinding tussen Alice en Bob toch niet voor andere doeleinden gebruikt wordt,
+dan kan Alice een bericht steeds herhalen totdat ze een ACK van Bob gekregen heeft.
+En Bob kan een ACK steeds herhalen totdat hij een volgend bericht van Alice gekregen heeft.
+In dit geval hebben we ook weer volgnummers van berichten en ACKs nodig -
+maar we kunnen deze beperken tot 1 bit
+(Alternating Bit Protocol, zie <a class="reference external" href="https://nl.wikipedia.org/wiki/Alternating_bit_protocol">https://nl.wikipedia.org/wiki/Alternating_bit_protocol</a>)</p>
+<p>Maak de onderstaande tabel af, waarbij bericht 0 goed aankomt bij Bob, en bericht 1 niet.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="43%" />
+<col width="31%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Alice</th>
+<th class="head">&#160;</th>
+<th class="head">Bob</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>&#160;</td>
+<td>– bericht 0 –&gt;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>– bericht 0 –&gt;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>&lt;- ACK 0 —</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>– bericht 1 –&gt;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>&lt;- ACK 0 —</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="foutherstellende-codes">
+<h1>Foutherstellende codes<a class="headerlink" href="#foutherstellende-codes" title="Permalink naar deze titel">¶</a></h1>
+<p>Bij het voorbeeld van de (7,4) Hamming code:</p>
+<p><strong>Vraag</strong>: wat gebeurt er als een pariteitsbit zelf fout is?</p>
+<p><strong>Vraag</strong>: welk bit is fout als de groep van p1 en p2 een pariteitsfout aangeven - en p3 niet?</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2018, SLO.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="../_sources/betrouwbaarheid/opdrachten.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,240 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nl">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Betrouwbare communicatie &#8212; Com-0  documentatie</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Zoeken" href="search.html" />
+    <link rel="next" title="Foutdetecterende codes" href="betrouwbaarheid/opdrachten.html" />
+    <link rel="prev" title="Toetsvragen" href="snelheid/toetsvragen.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Com-0</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigatie</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="inleiding.html">Inleiding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eerste-model.html">Een eerste model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lagen.html">Communicatie in lagen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="snelheid.html">Snelheid van communicatie</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Betrouwbare communicatie</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#foutdetecterende-codes">Foutdetecterende codes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bericht-van-ontvangst">Bericht van ontvangst</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#foutherstellende-codes">Foutherstellende codes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="schaalbaarheid.html">Schaling en schaalbaarheid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="todo.html">ToDo’s</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="snelheid/toetsvragen.html" title="vorig hoofdstuk">Toetsvragen</a></li>
+      <li>Next: <a href="betrouwbaarheid/opdrachten.html" title="volgend hoofdstuk">Foutdetecterende codes</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Snel zoeken</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Zoek" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="betrouwbare-communicatie">
+<h1>Betrouwbare communicatie<a class="headerlink" href="#betrouwbare-communicatie" title="Permalink naar deze titel">¶</a></h1>
+<div class="topic">
+<p class="topic-title first">Concepten en leerdoelen</p>
+<ul class="simple">
+<li>betrouwbaarheid</li>
+<li>foutkans</li>
+<li>kanaal</li>
+<li>redundantie</li>
+<li>compressie</li>
+<li>foutdetecterende codes en foutherstellende codes</li>
+</ul>
+</div>
+<p>Bij de communicatie tussen Alice en Bob kan er van alles misgaan, zowel bij het transport als bij de interpretatie.
+Een eerste vereiste voor een betrouwbare communicatie is een betrouwbaar transport van de vorm (datatransport):
+dat is het thema van dit hoofdstuk.</p>
+<a class="reference internal image-reference" href="_images/Communicatie-betrouwbaarheid-1.png"><img alt="_images/Communicatie-betrouwbaarheid-1.png" class="align-center" src="_images/Communicatie-betrouwbaarheid-1.png" style="width: 500px;" /></a>
+<p>We kunnen verschillende niveaus van betrouwbare communicatie onderscheiden:</p>
+<ol class="arabic simple">
+<li>Bob weet of het bericht dat hij van Alice ontvangen heeft, ongeschonden aangekomen is;</li>
+<li>Alice weet dat Bob haar bericht ongeschonden ontvangen heeft;</li>
+<li>(Alice weet dat Bob haar bericht juist geïnterpreteerd heeft.)</li>
+</ol>
+<p>Merk op dat (1) een vereiste is voor (2), en (2) voor (3).
+We laten in dit hoofdstuk niveau (3) buiten beschouwing.
+Bij menselijke communicatie is dat wel een essentieel onderdeel.
+We noemen hier een verbinding betrouwbaar als Alice weet dat Bob haar bericht ongeschonden ontvangen heeft,
+aan de hand van een “bericht van ontvangst” dat ze van Bob gekregen heeft.</p>
+<p>Een communicatie waarin Alice een bericht verstuurt naar Bob,
+zonder bevestiging van ontvangst, noemen we “best effort”.
+Een dergelijke “best effort” communicatie kan voor ons gevoel wel erg betrouwbaar zijn:
+een brief die je verstuurt met de Nederlands post (PostNL) komt zeer waarschijnlijk aan bij de bestemming.
+Maar als je zeker wilt weten dat deze aangekomen is,
+dan kun je deze brief (tegen meerkosten) versturen met “bevestiging van ontvangst”.</p>
+<p>Een voorwaarde voor een betrouwbare verbinding (communicatie) is een verbinding die berichten met een redelijke kans ongeschonden kan transporteren. Een belangrijke eigenschap (wet?) is dat we voor een gegeven kanaal de kans dat een bericht ongeschonden getransporteerd wordt willekeurig groot kunnen maken - ten koste van de bandbreedte en de latency.</p>
+<div class="section" id="foutdetecterende-codes">
+<h2>Foutdetecterende codes<a class="headerlink" href="#foutdetecterende-codes" title="Permalink naar deze titel">¶</a></h2>
+<p>Een eerste stap naar betrouwbare communicatie is dat Bob kan controleren of een bericht ongeschonden aangekomen is.
+Met andere woorden: Bob kan fouten in het bericht detecteren.
+We gebruiken hiervoor foutdetecterende codes.</p>
+<p>Enkele voorbeelden van foutdetecterende codes in het dagelijks leven:</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>controlegetal in een bankrekeningnummer (IBAN) (NLxx)</dt>
+<dd><ul class="first last">
+<li>zie <a class="reference external" href="https://nl.wikipedia.org/wiki/International_Bank_Account_Number">https://nl.wikipedia.org/wiki/International_Bank_Account_Number</a></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>controlecijfer (laatste cijfer) in een persoonsnummer (Burger Service Nummer, BSN)</dt>
+<dd><ul class="first last">
+<li>zie <a class="reference external" href="https://nl.wikipedia.org/wiki/Elfproef">https://nl.wikipedia.org/wiki/Elfproef</a></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>controlecijfer in het betalingskenmerk van een acceptgiro (het eerste cijfer)</dt>
+<dd><ul class="first last">
+<li>zie <a class="reference external" href="https://nl.wikipedia.org/wiki/Elfproef">https://nl.wikipedia.org/wiki/Elfproef</a></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Merk op dat het communicatiekanaal waarin deze getallen gebruikt worden vaak menselijke handelingen bevat:
+een fout die daarbij gemaakt kan worden is het omwisselen van twee cijfers.
+De genoemde codes zijn daartegen bestand.
+Machines zullen een dergelijke fout niet snel maken.</p>
+<p>Een eenvoudige manier om een bitfout te detecteren in een reeks bits is om er een pariteitsbit aan toe te voegen.
+Voorbeeld: we voegen bij het verzenden van 7 databits (een ASCII teken) een 8e bit toe zodat de som van deze 8 bits even is (even pariteit).
+Bij het ontvangen van een teken controleren we of de som van de 8 bits even is:
+als dat niet het geval is dan is er tenminste 1 bit “omgevallen”.
+We weten niet welk bit - het kan ook het pariteitsbit zelf zijn. Voorbeeld: bits 1001101 krijgt even pariteit als: 10011010.</p>
+<p>In plaats van een enkel pariteitsbit voor een klein groepje bits,
+kun je ook een langer getal gebruiken om een grotere groep bits of tekens te controleren op veranderingen.
+Voorbeelden hiervan zijn de Cyclic Redundancy Check (checksum) die gebruikt wordt in een Ethernet of WiFi pakket - zie <a class="reference external" href="https://nl.wikipedia.org/wiki/Cyclic_redundancy_check">https://nl.wikipedia.org/wiki/Cyclic_redundancy_check</a>;
+en een “secure hashcode” zoals SHA-256 die gebruikt wordt voor hele bestanden (zie <a class="reference external" href="https://en.wikipedia.org/wiki/Secure_Hash_Algorithms">https://en.wikipedia.org/wiki/Secure_Hash_Algorithms</a>).</p>
+</div>
+<div class="section" id="bericht-van-ontvangst">
+<h2>Bericht van ontvangst<a class="headerlink" href="#bericht-van-ontvangst" title="Permalink naar deze titel">¶</a></h2>
+<p>Een volgende stap is dat Bob een bericht van ontvangst (“acknowledgement”) kan sturen aan Alice - zodat zij zeker weet dat de communicatie geslaagd is.</p>
+<p>Moet Alice ook een bericht van ontvangst van het bericht van ontvangst sturen? Meestal is dat niet nodig: Alice stuurt gewoon het volgende bericht, waaruit Bob kan opmaken dat zijn bericht van ontvangst aangekomen is. Als Alice dit niet op tijd krijgt, stuurt ze vorige bericht nog een keer.</p>
+<p>Voor een bericht van ontvangst - en dus voor betrouwbare communicatie - heb je communicatie in beide richtingen nodig.
+Hoe ziet het protocol er nu uit? Een mogelijkheid is het volgende:</p>
+<p># Alice stuurt een bericht naar Bob
+# Als Bob dit bericht “in orde” ontvangt stuurt hij een ontvangstbevestiging (ACK)
+# Als Alice binnen een bepaalde tijd (“timeout”) geen ACK ontvangt, dan stuurt Alice het bericht nogmaals naar Bob
+# Als Alice een ACK ontvangt, stuurt ze het volgende bericht</p>
+<p>Merk op dat Alice geen verschil merkt tussen een bericht dat verloren raakt en een ACK van Bob die verloren raakt.</p>
+<p>Als Alice een serie berichten naar Bob wil versturen, dan levert dit protocol nogal wat vertraging op: (i) zelfs als alles goed gaat, duurt het tenminste tweemaal de latency van de verbinding tussen Alice en Bob voordat Alice een volgend bericht stuurt. (ii) als er een bericht of een ACK verloren raakt, wacht Alice bovendien nog de “timeout” periode voordat ze het bericht opnieuw verstuurt. Er zijn verschillende manieren om dit protocol te versnellen (zie de opdrachten).</p>
+<p>Communicatie in twee richtingen heeft vaak de vorm van vraag en antwoord. Een antwoord op een vraag fungeert daarbij vaak als impliciete ontvangstbevestiging. Of anders: als Alice en Bob elkaar vaak genoeg een bericht sturen, dan kan de “acknowledgement” ook onderdeel zijn van een normaal bericht.</p>
+<p>Een ontvangstbericht kan ook gebruikt worden om de zendende agent te vertellen dat deze het volgende bericht kan versturen: de ontvanger heeft niet alleen het vorige bericht ontvangen, maar is ook klaar voor het volgende bericht. Dit is een voorbeeld van “control flow” in een protocol, bedoeld om de snelheid van de zender en van de ontvanger op elkaar af te stemmen.</p>
+</div>
+<div class="section" id="foutherstellende-codes">
+<h2>Foutherstellende codes<a class="headerlink" href="#foutherstellende-codes" title="Permalink naar deze titel">¶</a></h2>
+<p>Met behulp van een pariteitsbit kun je zien of er een bit in een teken (byte) “omgevallen” is: veranderd van 0 in 1, of omgekeerd. Je weet dan niet welk bit het betreft: je kunt het bit niet herstellen. Door een paar extra bits toe te voegen kan dit wel: we krijgen dan een foutherstellende code.</p>
+<p>Foutherstellende codes worden onder andere op de volgende plaatsen toegepast:</p>
+<ul class="simple">
+<li>CD: een kras op een CD kan betekenen dat er bits beschadigd raken. Door het gebruik van een foutherstellende code kunnen de oorspronkelijke bits (meestal) hersteld worden. Hierdoor is de audio-CD minder gevoelig voor krassen dan de analoge langspeelplaat.</li>
+<li>RAID disks: de gegevens worden opgeslagen op meerdere harde schijven, voor een grotere betrouwbaarheid en voor een snellere toegang. Door het gebruik van foutherstellende codes gaan er geen gegevens verloren als er één van de RAID-schijven crasht; in het geval van RAID6 blijven de gegevens zelfs intact als er 2 van de 5 schijven crashen.</li>
+<li>ECC in RAM geheugen: grote geheugens zijn gevoelig voor “soft errors”: fouten die soms optreden, bijvoorbeeld door een langskomend kosmisch deeltje. Door het gebruik van foutherstellende codes worden deze soft errors hersteld. (zie <a class="reference external" href="https://en.wikipedia.org/wiki/ECC_memory">https://en.wikipedia.org/wiki/ECC_memory</a>. )</li>
+</ul>
+<p>Hoe werkt een foutherstellende code? We geven het voorbeeld van de Hamming-code, zie <a class="reference external" href="https://en.wikipedia.org/wiki/Hamming_code">https://en.wikipedia.org/wiki/Hamming_code</a>
+met een parity-bit kun je een bit-error detecteren in een groepje bits
+door dezelfde databits in verschillende parity-groepen op te nemen kun je bepalen welke van de bits fout is - en dus gecorrigeerd moet worden.</p>
+<p>[[Bestand:Hamming-7-4.png|300px|Hamming code (7,4)]]</p>
+<p>Bekijk de bovenstaande figuur van de foutherstellende Hammingcode (7,4) - met 3 pariteitsbits en 4 databits. parity-bit p1 detecteert een bit-fout in de groep (d1, d2, d4, p1); p2 in de groep (d1, d3, d4, p2); p3 in de groep (d2, d3, d4, p3). Stel dat d2 fout is: dit betekent dat p1 en p3 een fout detecteren, en p2 niet; d2 is het enige bit dat in de groepen van p1 en p3 valt, en buiten de groep van p2: dus d2 moet gecorrigeerd worden.</p>
+<p>Opmerking: zie de goocheltruc die beschreven is in het Wikipedia-artikel.</p>
+<p>Merk op dat we met deze Hamming-code met 3 extra bits een enkele bitfout in 4 databits kunnen herstellen; dit is dus veel beter dan het gewoon herhalen van dezelfde 4 databits.</p>
+<p>Als je met een groter groep databits werkt, heb je naar verhouding met steeds minder pariteitsbits nodig: met 8 pariteitsbits kun je de enkele bitfouten herstellen in 255-8=247 databits.</p>
+<div class="admonition note">
+<p class="first admonition-title">Notitie</p>
+<p class="last">Bob kan alleen vaststellen of hij het bericht goed ontvangen heeft in het geval van foutdetecterende codes.
+Hij kan wel vaststellen of hij het bericht ontvangen heeft, maar niet noodzakelijk of dit onbeschadigd is.
+(Een enkel omgevallen bit kan al een heel andere betekenis geven.)
+Hoe kun je in het geval van een postpakket of een brief vaststellen dat deze intact aangekomen is?
+(Je wilt misschien ook weten of iemand anders de brief gelezen kan hebben, of misschien de inhoud veranderd heeft.
+Dat is een onderdeel van <em>security</em>.)</p>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="betrouwbaarheid/opdrachten.html">Foutdetecterende codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="betrouwbaarheid/opdrachten.html#bericht-van-ontvangst">Bericht van ontvangst</a></li>
+<li class="toctree-l1"><a class="reference internal" href="betrouwbaarheid/opdrachten.html#foutherstellende-codes">Foutherstellende codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="betrouwbaarheid/toetsvragen.html">Toetsvragen</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2018, SLO.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/betrouwbaarheid.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

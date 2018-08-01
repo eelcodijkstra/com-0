@@ -1,0 +1,208 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nl">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Een eerste model &#8212; Com-0  documentatie</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Zoeken" href="search.html" />
+    <link rel="next" title="Protocollen" href="eerste-model/protocollen.html" />
+    <link rel="prev" title="Toetsvragen" href="inleiding/toetsvragen.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Com-0</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigatie</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="inleiding.html">Inleiding</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Een eerste model</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="eerste-model/protocollen.html">Protocollen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eerste-model/analoog-vs-digitaal.html">Analoog versus digitaal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eerste-model/opdrachten.html">Opdrachten</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eerste-model/toetsvragen.html">Toetsvragen</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="lagen.html">Communicatie in lagen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="snelheid.html">Snelheid van communicatie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="betrouwbaarheid.html">Betrouwbare communicatie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schaalbaarheid.html">Schaling en schaalbaarheid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="todo.html">ToDo’s</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="inleiding/toetsvragen.html" title="vorig hoofdstuk">Toetsvragen</a></li>
+      <li>Next: <a href="eerste-model/protocollen.html" title="volgend hoofdstuk">Protocollen</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Snel zoeken</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Zoek" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="een-eerste-model">
+<h1>Een eerste model<a class="headerlink" href="#een-eerste-model" title="Permalink naar deze titel">¶</a></h1>
+<p>Onder communicatie verstaan we het <em>overbrengen van informatie</em> tussen twee of meer <em>agents</em>.
+Een agent is bijvoorbeeld een mens, een dier, een computer, of een ander apparaat.</p>
+<p>We beginnen met de communicatie tussen 2 agents, Alice en Bob, in één richting.
+Alice wil een bericht met een bepaalde betekenis overbrengen naar Bob.</p>
+<a class="reference internal image-reference" href="_images/Alice-Bob-0.png"><img alt="_images/Alice-Bob-0.png" class="align-center" src="_images/Alice-Bob-0.png" style="width: 500px;" /></a>
+<p>Voor het overbrengen van dit bericht moet Alice dit bericht beschrijven (<em>representeren</em>) in een <em>vorm</em>
+die (i) <em>getransporteerd</em>  kan worden naar Bob;
+en die (ii) Bob kan begrijpen (<em>interpreteren</em>).
+Deze vorm kan bijvoorbeeld een tekst zijn op een propje papier dat Alice door de klas schiet.
+Helaas kan Alice een bericht niet rechtstreeks naar Bob overbrengen,
+bijvoorbeeld via telepathie.</p>
+<a class="reference internal image-reference" href="_images/Alice-Bob-1.png"><img alt="_images/Alice-Bob-1.png" class="align-center" src="_images/Alice-Bob-1.png" style="width: 500px;" /></a>
+<p>De stappen bij communicatie zijn:</p>
+<ul class="simple">
+<li><em>representeren</em>: van betekenis naar vorm</li>
+<li><em>transporteren</em> van de vorm</li>
+<li><em>interpreteren</em>: van vorm naar betekenis</li>
+</ul>
+<p>We kijken eerst naar het transport.
+De interpretatie door Bob bespreken we later.
+Bij dit transport speelt de betekenis van de vorm geen rol:
+het transport moet er voor zorgen dat de vorm ongeschonden bij Bob aankomt.
+We spreken daarom van <em>datatransport</em>.</p>
+<p><strong>Voorbeelden</strong>.
+We geven hier naast de vorm en de manier van transport,
+ook de afstand die je ermee kunt overbruggen,
+en de tijd die nodig is voor het transport.
+Deze laatste twee bepalen vaak het soort communicatie dat je kiest.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="40%" />
+<col width="19%" />
+<col width="15%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Vorm</th>
+<th class="head">Transport</th>
+<th class="head">Afstand</th>
+<th class="head">Tijd</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>tekening op papier</td>
+<td>propje door het lokaal</td>
+<td>5 m</td>
+<td>1 s</td>
+</tr>
+<tr class="row-odd"><td>gesproken bericht</td>
+<td>door de lucht in het lokaal</td>
+<td>1-10 m</td>
+<td>0.1 s</td>
+</tr>
+<tr class="row-even"><td>gesproken bericht</td>
+<td>via telefoon</td>
+<td>1 m-50.000 km</td>
+<td>0.1-1 s</td>
+</tr>
+<tr class="row-odd"><td>tekstbericht</td>
+<td>via WhatsApp</td>
+<td>1 m-50.000 km</td>
+<td>2 - 120 s</td>
+</tr>
+<tr class="row-even"><td>tekstbericht</td>
+<td>via e-mail</td>
+<td>1 m-50.000 km</td>
+<td>0.1 - 10 h</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Te doen</p>
+<ul class="last simple">
+<li>begrip <em>kanaal</em> introduceren (in eerste model, of later?)</li>
+<li>aan de hand van dit model het verschil uitleggen tussen analoge communicatie,
+en communicatie met computers:<ul>
+<li>analoog: analoge vorm, beperkte mogelijkheden om deze om te zetten</li>
+<li>specifieke vormen voor spraak, beeld (telefonie, radio, televisie)</li>
+<li>computers: (i) universele vorm; (ii) transformeren van vormen.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="eerste-model/protocollen.html">Protocollen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eerste-model/analoog-vs-digitaal.html">Analoog versus digitaal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eerste-model/opdrachten.html">Opdrachten</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="eerste-model/opdrachten.html#opdracht-1-hoe-communiceer-jij">Opdracht 1.  Hoe communiceer jij?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eerste-model/opdrachten.html#opdracht-2-hoe-communiceerde-men-vroeger">Opdracht 2. hoe communiceerde men vroeger?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eerste-model/opdrachten.html#opdracht-3-belangrijke-communicatie-uitvindingen">Opdracht 3. belangrijke communicatie-uitvindingen</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="eerste-model/toetsvragen.html">Toetsvragen</a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2018, SLO.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/eerste-model.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
