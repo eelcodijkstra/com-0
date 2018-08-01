@@ -17,6 +17,12 @@ Com-0: inleiding communicatie
    schaalbaarheid.rst
    todo.rst
 
+.. toctree::
+   :caption: Andere modules
+
+   https://eelcodijkstra.github.io/iot-0/
+   https://eelcodijkstra.github.io/iot-0/
+
 Index en zoekpagina
 ===================
 
