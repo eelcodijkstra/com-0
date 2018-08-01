@@ -20,8 +20,8 @@ Com-0: inleiding communicatie
 .. toctree::
    :caption: Andere modules
 
-   https://eelcodijkstra.github.io/iot-0/
-   https://eelcodijkstra.github.io/iot-0/
+   IoT-0 <https://eelcodijkstra.github.io/iot-0/>
+   IoT-1 <https://eelcodijkstra.github.io/iot-0/>
 
 Index en zoekpagina
 ===================
